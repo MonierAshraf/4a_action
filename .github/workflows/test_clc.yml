@@ -19,8 +19,14 @@ jobs:
         - name: run tests v1 
           run: python -m unittest test_calculator.py 
     deploy:
-       
+        needs: testing 
         runs-on: ubuntu-latest
         steps:
             - name: Deployment Step
               run: echo "Deployment step executed after successful tests."
+    deploy2:
+        needs: testing 
+        runs-on: ubuntu-latest
+        steps:
+            - name: Deployment Step
+              run: echo "Deployment step executed after successful tests."          
